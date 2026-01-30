@@ -1,3 +1,4 @@
+import "dotenv/config";
 import { execSync } from "child_process";
 import fs from "fs";
 import path from "path";
@@ -8,12 +9,13 @@ import {
   name_video,
   VIDEO_METADATA,
 } from "./root-config.js";
+import { Logger } from "./src/utils/logger.js";
 
 // ✅ Get __dirname equivalent in ES modules
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-console.log(`📂 Loading data from project: ${root_JSX}`);
+Logger.info(`Loading data from project: ${root_JSX}`);
 
 let videoData;
 
@@ -31,7 +33,7 @@ async function loadDataAndRender() {
     // ✅ Convert to file:// URL cho Windows
     const dataUrl = new URL(`file:///${dataPath.replace(/\\/g, "/")}`).href;
 
-    console.log(`📂 Loading from: ${dataPath}`);
+    Logger.debug(`Loading from: ${dataPath}`);
 
     // Check file exists
     if (!fs.existsSync(dataPath)) {
@@ -61,14 +63,18 @@ async function loadDataAndRender() {
       videoData = videoData01;
     }
 
-    console.log(`✅ Loaded ${videoData.length} video items`);
+    Logger.success(`Loaded ${videoData.length} video items`);
 
     // ✅ Tiếp tục với logic render sau khi load data
     runRenderProcess();
   } catch (error) {
-    console.error(`❌ Failed to load data:`, error.message);
-    console.error(
-      `📍 Check if file exists: src/rootComponents/${root_JSX}/data.js`,
+    Logger.error(
+      `Failed to load data from project: ${root_JSX}`,
+      error,
+      {
+        dataPath: `src/rootComponents/${root_JSX}/data.js`,
+        rootJSX: root_JSX,
+      }
     );
     process.exit(1);
   }
@@ -135,7 +141,7 @@ const stillDir = "./renders/stills";
 function createDirectories() {
   if (!fs.existsSync(renderDir)) {
     fs.mkdirSync(renderDir, { recursive: true });
-    console.log(`📁 Created directory: ${renderDir}`);
+    Logger.info(`Created directory: ${renderDir}`);
   }
   if (
     (currentMode === RENDER_MODE.STILL_ONLY ||
@@ -143,7 +149,7 @@ function createDirectories() {
     !fs.existsSync(stillDir)
   ) {
     fs.mkdirSync(stillDir, { recursive: true });
-    console.log(`📁 Created directory: ${stillDir}`);
+    Logger.info(`Created directory: ${stillDir}`);
   }
 }
 
@@ -185,14 +191,14 @@ function generateMetadata(item) {
 // ============================================
 
 function renderVideo(item) {
-  console.log(item.data[0].hook, "hook");
+  Logger.debug(`Rendering video for hook: ${item.data[0].hook}`);
 
   const nameUse = item.nameUseFN;
   const folder = item.folderUSe;
   const videoPath = `${renderDir}/${folder}/${nameUse}.mp4`;
 
   if (!RENDER_SETTINGS.overwriteExisting && fs.existsSync(videoPath)) {
-    console.log(`   ⏭️  Video already exists, skipping...`);
+    Logger.info(`Video already exists, skipping...`);
     const stats = fs.statSync(videoPath);
     const fileSizeMB = (stats.size / (1024 * 1024)).toFixed(1);
     return { success: true, size: fileSizeMB, type: "video", skipped: true };
@@ -232,9 +238,9 @@ function renderVideo(item) {
 
         fs.unlinkSync(videoPath);
         fs.renameSync(tempPath, videoPath);
-        console.log(`   ✅ Added metadata successfully`);
+        Logger.success(`Added metadata successfully`);
       } catch (error) {
-        console.error(`   ⚠️  Failed to add metadata: ${error.message}`);
+        Logger.warn(`Failed to add metadata: ${error.message}`);
         if (fs.existsSync(tempPath)) {
           fs.unlinkSync(tempPath);
         }
@@ -253,7 +259,7 @@ function renderStill(item) {
   const stillPath = `${stillDir}/${item.id}.${STILL_CONFIG.format}`;
 
   if (!RENDER_SETTINGS.overwriteExisting && fs.existsSync(stillPath)) {
-    console.log(`   ⏭️  Still already exists, skipping...`);
+    Logger.info(`Still already exists, skipping...`);
     const stats = fs.statSync(stillPath);
     const fileSizeMB = (stats.size / (1024 * 1024)).toFixed(2);
     return { success: true, size: fileSizeMB, type: "still", skipped: true };
@@ -285,7 +291,7 @@ function renderStill(item) {
 }
 
 function renderItem(item, index) {
-  console.log(`🎬 [${index + 1}/${videoData.length}] Processing: ${item.id}`);
+  Logger.info(`[${index + 1}/${videoData.length}] Processing: ${item.id}`);
   const results = [];
   const itemStartTime = Date.now();
 
@@ -294,7 +300,7 @@ function renderItem(item, index) {
       currentMode === RENDER_MODE.VIDEO_ONLY ||
       currentMode === RENDER_MODE.BOTH
     ) {
-      console.log(`   📹 Rendering video...`);
+      Logger.info(`Rendering video...`);
       const videoResult = renderVideo(item);
       results.push(videoResult);
     }
@@ -303,7 +309,7 @@ function renderItem(item, index) {
       currentMode === RENDER_MODE.STILL_ONLY ||
       currentMode === RENDER_MODE.BOTH
     ) {
-      console.log(`   🖼️  Rendering still image...`);
+      Logger.info(`Rendering still image...`);
       const stillResult = renderStill(item);
       results.push(stillResult);
     }
@@ -315,14 +321,14 @@ function renderItem(item, index) {
       const sizeInfo = successResults
         .map((r) => `${r.type}: ${r.size}MB`)
         .join(", ");
-      console.log(`✅ Done: ${item.id} (${renderTime}s) - ${sizeInfo}\n`);
+      Logger.success(`Done: ${item.id} (${renderTime}s) - ${sizeInfo}\n`);
       return { success: true, results: successResults };
     } else {
-      console.log(`❌ Failed: ${item.id}\n`);
+      Logger.error(`Failed: ${item.id}\n`);
       return { success: false, results: [] };
     }
   } catch (error) {
-    console.error(`❌ Error processing ${item.id}:`, error.message);
+    Logger.error(`Error processing ${item.id}`, error);
     return { success: false, results: [] };
   }
 }
@@ -334,24 +340,24 @@ function renderItem(item, index) {
 function runRenderProcess() {
   createDirectories();
 
-  console.log(
-    `🚀 Starting batch render in ${VIDEO_CONFIG.width}x${VIDEO_CONFIG.height} (2K)`,
+  Logger.info(
+    `Starting batch render in ${VIDEO_CONFIG.width}x${VIDEO_CONFIG.height} (2K)`,
   );
-  console.log(
-    `📊 Video: ${VIDEO_CONFIG.fps}fps, ${VIDEO_CONFIG.codec}, Quality: ${RENDER_SETTINGS.videoQuality}`,
+  Logger.info(
+    `Video: ${VIDEO_CONFIG.fps}fps, ${VIDEO_CONFIG.codec}, Quality: ${RENDER_SETTINGS.videoQuality}`,
   );
-  console.log(`🔧 Mode: ${currentMode.toUpperCase()}`);
+  Logger.info(`Mode: ${currentMode.toUpperCase()}`);
 
   if (currentMode !== RENDER_MODE.VIDEO_ONLY) {
-    console.log(
-      `🖼️  Still: ${STILL_CONFIG.format.toUpperCase()}, Frame: ${STILL_CONFIG.frame}`,
+    Logger.info(
+      `Still: ${STILL_CONFIG.format.toUpperCase()}, Frame: ${STILL_CONFIG.frame}`,
     );
   }
 
-  console.log(
-    `🔄 Overwrite existing: ${RENDER_SETTINGS.overwriteExisting ? "YES" : "NO"}`,
+  Logger.info(
+    `Overwrite existing: ${RENDER_SETTINGS.overwriteExisting ? "YES" : "NO"}`,
   );
-  console.log("");
+  Logger.info("");
 
   let successCount = 0;
   let errorCount = 0;
@@ -368,10 +374,12 @@ function runRenderProcess() {
 
   const totalTime = ((Date.now() - startTime) / 1000 / 60).toFixed(1);
 
-  console.log(`\n🎯 RENDER COMPLETE`);
-  console.log(`✅ Success: ${successCount}`);
-  console.log(`❌ Errors: ${errorCount}`);
-  console.log(`⏱️  Total time: ${totalTime} minutes`);
+  Logger.info(`\n🎯 RENDER COMPLETE`);
+  Logger.success(`Success: ${successCount}`);
+  if (errorCount > 0) {
+    Logger.error(`Errors: ${errorCount}`);
+  }
+  Logger.info(`Total time: ${totalTime} minutes`);
 
   if (currentMode !== RENDER_MODE.STILL_ONLY && fs.existsSync(renderDir)) {
     const videoFiles = fs
@@ -383,8 +391,8 @@ function runRenderProcess() {
       totalVideoSize += stats.size;
     });
     const totalVideoSizeMB = (totalVideoSize / (1024 * 1024)).toFixed(1);
-    console.log(
-      `📹 Videos: ${totalVideoSizeMB}MB (${videoFiles.length} files) - ${renderDir}`,
+    Logger.info(
+      `Videos: ${totalVideoSizeMB}MB (${videoFiles.length} files) - ${renderDir}`,
     );
   }
 
@@ -400,12 +408,12 @@ function runRenderProcess() {
       totalStillSize += stats.size;
     });
     const totalStillSizeMB = (totalStillSize / (1024 * 1024)).toFixed(1);
-    console.log(
-      `🖼️  Stills: ${totalStillSizeMB}MB (${stillFiles.length} files) - ${stillDir}`,
+    Logger.info(
+      `Stills: ${totalStillSizeMB}MB (${stillFiles.length} files) - ${stillDir}`,
     );
   }
 
-  console.log(`\n🎉 Batch render completed!`);
+  Logger.success(`\nBatch render completed!`);
 }
 
 // ✅ Start the process

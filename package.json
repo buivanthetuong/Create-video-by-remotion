@@ -1,10 +1,18 @@
 {
-  "name": "my-sta-video",
+  "name": "video-auto-create",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "Automatic video creation using Remotion framework for data-driven video generation",
   "repository": {},
   "license": "UNLICENSED",
   "private": true,
+  "author": "Your Name",
+  "keywords": [
+    "remotion",
+    "video",
+    "automation",
+    "video-generation",
+    "tiktok"
+  ],
   "dependencies": {
     "@remotion/animation-utils": "^4.0.405",
     "@remotion/bundler": "^4.0.405",
@@ -12,6 +20,7 @@
     "@remotion/media-utils": "^4.0.372",
     "@remotion/renderer": "^4.0.405",
     "bootstrap": "^5.3.8",
+    "dotenv": "^17.2.3",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "remotion": "^4.0.405",
@@ -30,7 +39,6 @@
     "upgrade": "remotion upgrade",
     "renderimg": "node render-all6image.js",
     "rendervideo": "tsx render-all_video_tiktok.js",
-    "rendervideoSLOW": "node render-all_video_tiktok.js",
     "lint": "eslint src"
   },
   "type": "module",

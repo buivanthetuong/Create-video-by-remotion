@@ -1,16 +1,42 @@
-node_modules
-dist
-.DS_Store
+# Dependencies
+node_modules/
+package-lock.json  # Nếu dùng yarn
+# Build outputs
+dist/
+build/
+out/
+# Environment
 .env
-
-out
-
-build
-
-A_saveOld
-
+.env.local
+.env.*.local
+# OS files
+.DS_Store
+Thumbs.db
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+# Render outputs
 renders/
 *.mp4
 *.mov
+*.avi
 *.wav
+*.mp3
+# Logs
+logs/
+*.log
+npm-debug.log*
+# Temporary
+tmp/
+temp/
+*.tmp
+# Archives
 *.zip
+*.rar
+*.tar.gz
+# Old/backup folders
+*_old/
+*_backup/
+A_saveOld/

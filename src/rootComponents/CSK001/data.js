@@ -2,6 +2,7 @@
 import DataFront from "./data_Front_001.json" with { type: "json" };
 import { keepOnlyActionsCodeTimeFixedStt } from "../../components/ActionOrchestrator/utils/dataSupportFuntions.js";
 import { CMD_Fetch } from "../../layouts/groupUtils.js";
+import { Logger } from "../../utils/logger.js";
 
 // Import Group Handlers
 import group1_1 from "../../layouts/group1/group1_1.js";
@@ -31,12 +32,10 @@ function handleItem(group) {
   const key = `group${groupStr}_${typeStr}`;
   const handler = handlerMap[key];
 
-  if (handler) {
-    return handler(group);
-  } else {
-    console.warn("❌ Chưa có handler cho:", key);
-    return group;
-  }
+  if (!handler) {
+  throw new Error(`Handler not found for layout: ${key}`);
+}
+return handler(group);
 }
 
 //video tổng
@@ -85,5 +84,10 @@ DataFront.forEach((videoData) => {
   videoData01.push(video);
 });
 
-console.log(JSON.stringify(keepOnlyActionsCodeTimeFixedStt(videoData01)));
+if (videoData01.length > 0) {
+  Logger.debug("First video data:", videoData01[0]);
+}
+
+
+
 export { videoData01 };
