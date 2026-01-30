@@ -1,0 +1,851 @@
+[
+  [
+    {
+      "actions": [
+        {
+          "cmd": "soundPlayerAction",
+          "volume": 0.1,
+          "ToEndFrame": true,
+          "soundSource": "SOUNDCHUNG_baroque_vuivl"
+        },
+        {
+          "cmd": "divAction",
+          "id": "BG001_a4",
+          "ToEndFrame": true,
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          }
+        },
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "BG001_a4",
+          "ToEndFrame": true,
+          "zIndex": 0,
+          "img": "BG_005.png",
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "left": 0,
+            "width": "100%",
+            "height": "100%",
+            "objectFit": "cover"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "main_a4",
+          "group": "a4",
+          "styleCss": {
+            "position": "absolute",
+            "inset": 0,
+            "top": "3%",
+            "display": "flex",
+            "flexDirection": "column",
+            "padding": "50px"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "row1_a4",
+          "toID": "main_a4",
+          "group": "a4",
+          "styleCss": {
+            "position": "relative",
+            "height": "20%",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "textAlign": "center"
+          }
+        },
+        {
+          "cmd": "typingText",
+          "text": "🧐 Đây là khớp nào trên cơ thể?",
+          "group": "a4",
+          "toID": "row1_a4",
+          "styleCss": {
+            "color": "yellow",
+            "fontWeight": 800,
+            "lineHeight": 1.75,
+            "letterSpacing": "0.5px",
+            "fontSize": "80px"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "row2_a4",
+          "toID": "main_a4",
+          "group": "a4",
+          "styleCss": {
+            "position": "relative",
+            "height": "35%",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "textAlign": "center"
+          }
+        },
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "row2_a4",
+          "group": "a4",
+          "img": "CSK_question1.png",
+          "styleCss": {
+            "filter": "drop-shadow(0 0 16px rgb(255, 255, 255))",
+            "borderRadius": "20px",
+            "width": "450px",
+            "height": "450px",
+            "opacity": 0,
+            "animation": "zoomIn 0.8s ease-out forwards"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "row3_a4",
+          "toID": "main_a4",
+          "group": "a4",
+          "styleCss": {
+            "position": "relative",
+            "height": "10%",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "textAlign": "center"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "row4_a4",
+          "toID": "main_a4",
+          "group": "a4",
+          "styleCss": {
+            "position": "relative",
+            "height": "10%",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "textAlign": "center"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "row5_a4",
+          "toID": "main_a4",
+          "group": "a4",
+          "styleCss": {
+            "position": "relative",
+            "height": "10%",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "textAlign": "center"
+          }
+        }
+      ],
+      "code": "CSK002_001",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "typingText",
+          "text": "⏱ >2.000 lần/ngày",
+          "noTyping": true,
+          "group": "a4",
+          "toID": "row3_a4",
+          "styleCss": {
+            "fontWeight": 600,
+            "lineHeight": 1.75,
+            "letterSpacing": "0.5px",
+            "color": "#ffffff",
+            "backgroundColor": "green",
+            "borderRadius": "20px",
+            "padding": "10px",
+            "fontSize": "60px",
+            "animation": "fadeInSlideLeft 1s ease-out forwards"
+          }
+        }
+      ],
+      "code": "CSK002_002",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "typingText",
+          "text": "💪 Lực tới 70kg",
+          "noTyping": true,
+          "group": "a4",
+          "toID": "row4_a4",
+          "styleCss": {
+            "fontWeight": 600,
+            "lineHeight": 1.75,
+            "letterSpacing": "0.5px",
+            "color": "#ffffff",
+            "backgroundColor": "green",
+            "borderRadius": "20px",
+            "padding": "10px",
+            "fontSize": "60px",
+            "animation": "fadeInSlideLeft 1s ease-out forwards"
+          }
+        }
+      ],
+      "code": "CSK002_003",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "typingText",
+          "text": "🍽 100% bữa ăn",
+          "noTyping": true,
+          "group": "a4",
+          "toID": "row5_a4",
+          "styleCss": {
+            "fontWeight": 600,
+            "lineHeight": 1.75,
+            "letterSpacing": "0.5px",
+            "color": "#ffffff",
+            "backgroundColor": "green",
+            "borderRadius": "20px",
+            "padding": "10px",
+            "fontSize": "60px",
+            "animation": "fadeInSlideLeft 1s ease-out forwards"
+          }
+        }
+      ],
+      "code": "CSK002_004",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "divAction",
+          "id": "BG001_b1",
+          "ToEndFrame": true,
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          }
+        },
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "BG001_b1",
+          "ToEndFrame": true,
+          "zIndex": 0,
+          "img": "BG_005.png",
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "left": 0,
+            "width": "100%",
+            "height": "100%",
+            "objectFit": "cover"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "main_b1",
+          "group": "b1",
+          "styleCss": {
+            "position": "absolute",
+            "inset": 0,
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center"
+          }
+        },
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "main_b1",
+          "img": null,
+          "styleCss": {
+            "position": "absolute",
+            "animation": "zoomIn 1s ease-in-out forwards"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "textCont_b1",
+          "toID": "main_b1",
+          "group": "b1",
+          "styleCss": {
+            "position": "absolute",
+            "height": "30%",
+            "zIndex": 2,
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "textAlign": "center"
+          }
+        },
+        {
+          "cmd": "typingText",
+          "text": "👉 Đó chính là…",
+          "toID": "textCont_b1",
+          "noTyping": true,
+          "group": "b1",
+          "styleCss": {
+            "color": "yellow",
+            "fontWeight": 800,
+            "lineHeight": 1.75,
+            "letterSpacing": "0.5px",
+            "fontSize": "80px",
+            "animation": "zoomIn 1s ease-in-out forwards"
+          }
+        },
+        { "cmd": "soundPlayerAction", "soundSource": "soundEffect_success" }
+      ],
+      "code": "CSK002_005",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "divAction",
+          "id": "BG001_c1",
+          "group": "c1",
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          }
+        },
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "BG001_c1",
+          "group": "c1",
+          "img": "BG_005.png",
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "left": 0,
+            "width": "100%",
+            "height": "100%",
+            "objectFit": "cover"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "main_c1",
+          "group": "c1",
+          "styleCss": {
+            "position": "absolute",
+            "inset": 0,
+            "top": "3%",
+            "display": "flex",
+            "flexDirection": "column",
+            "padding": "50px"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "textCont_c1",
+          "toID": "main_c1",
+          "group": "c1",
+          "styleCss": {
+            "position": "relative",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "textAlign": "center",
+            "height": "25%",
+            "zIndex": 2
+          }
+        },
+        {
+          "cmd": "typingText",
+          "text": "🦴 Khớp thái dương – hàm",
+          "toID": "textCont_c1",
+          "noTyping": true,
+          "group": "c1",
+          "styleCss": {
+            "color": "yellow",
+            "fontWeight": 800,
+            "lineHeight": 1.75,
+            "letterSpacing": "0.5px",
+            "fontSize": "100px",
+            "animation": "zoomIn 1s ease-in-out forwards"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "imgCont_c1",
+          "toID": "main_c1",
+          "group": "c1",
+          "styleCss": {
+            "marginTop": "200px",
+            "display": "flex",
+            "position": "relative",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "height": "40%",
+            "width": "100%"
+          }
+        },
+        {
+          "cmd": "imageViewActionToID",
+          "img": "CSK_thaiduongham2.png",
+          "toID": "imgCont_c1",
+          "group": "c1",
+          "styleCss": {
+            "filter": "drop-shadow(0 0 16px rgb(255, 255, 255))",
+            "borderRadius": "20px",
+            "height": "500px",
+            "width": "500px",
+            "animation": "zoomIn 1s ease-in-out forwards"
+          }
+        }
+      ],
+      "code": "CSK002_006",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "divAction",
+          "id": "BG001_d1",
+          "group": "d1",
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          }
+        },
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "BG001_d1",
+          "group": "d1",
+          "img": "BG_005.png",
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "left": 0,
+            "width": "100%",
+            "height": "100%",
+            "objectFit": "cover"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "main_d1",
+          "group": "d1",
+          "styleCss": {
+            "position": "absolute",
+            "inset": 0,
+            "top": "3%",
+            "display": "flex",
+            "flexDirection": "column",
+            "padding": "50px"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "textCont_d1",
+          "toID": "main_d1",
+          "group": "d1",
+          "styleCss": {
+            "position": "relative",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "textAlign": "center",
+            "height": "25%",
+            "zIndex": 2
+          }
+        },
+        {
+          "cmd": "typingText",
+          "text": "Chức năng?",
+          "toID": "textCont_d1",
+          "noTyping": true,
+          "group": "d1",
+          "styleCss": {
+            "color": "yellow",
+            "fontWeight": 800,
+            "lineHeight": 1.75,
+            "letterSpacing": "0.5px",
+            "fontSize": "100px",
+            "animation": "zoomIn 1s ease-in-out forwards"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "imgCont_d1",
+          "toID": "main_d1",
+          "group": "d1",
+          "styleCss": {
+            "marginTop": "200px",
+            "display": "flex",
+            "position": "relative",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "height": "40%",
+            "width": "100%"
+          }
+        },
+        {
+          "cmd": "imageViewActionToID",
+          "img": "CSK_chew.png",
+          "toID": "imgCont_d1",
+          "group": "d1",
+          "styleCss": {
+            "filter": "drop-shadow(0 0 16px rgb(255, 255, 255))",
+            "borderRadius": "20px",
+            "height": "500px",
+            "width": "500px",
+            "animation": "zoomIn 1s ease-in-out forwards"
+          }
+        }
+      ],
+      "code": "CSK002_007",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "divAction",
+          "id": "BG001_e5",
+          "ToEndFrame": true,
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          }
+        },
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "BG001_e5",
+          "ToEndFrame": true,
+          "zIndex": 0,
+          "img": "BG_005.png",
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "left": 0,
+            "width": "100%",
+            "height": "100%",
+            "objectFit": "cover"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "main_e5",
+          "group": "e5",
+          "styleCss": {
+            "position": "absolute",
+            "inset": 0,
+            "display": "grid",
+            "gridTemplateColumns": "1fr 1fr",
+            "gridTemplateRows": "1fr auto 1fr",
+            "gap": "20px",
+            "padding": "40px"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "topLeft_e5",
+          "toID": "main_e5",
+          "group": "e5",
+          "styleCss": {
+            "gridColumn": "1",
+            "gridRow": "1",
+            "display": "flex",
+            "flexDirection": "column",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "zIndex": 2
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "topRight_e5",
+          "toID": "main_e5",
+          "group": "e5",
+          "styleCss": {
+            "gridColumn": "2",
+            "gridRow": "1",
+            "display": "flex",
+            "flexDirection": "column",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "zIndex": 2
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "center_e5",
+          "toID": "main_e5",
+          "group": "e5",
+          "styleCss": {
+            "gridColumn": "1/3",
+            "gridRow": "2",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "textAlign": "center",
+            "zIndex": 2
+          }
+        },
+        {
+          "cmd": "typingText",
+          "text": "⚠ Nhưng nếu khớp này gặp vấn đề…",
+          "toID": "center_e5",
+          "group": "e5",
+          "styleCss": {
+            "color": "yellow",
+            "fontWeight": 800,
+            "lineHeight": 1.75,
+            "letterSpacing": "0.5px",
+            "fontSize": "100px"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "bottomLeft_e5",
+          "toID": "main_e5",
+          "group": "e5",
+          "styleCss": {
+            "gridColumn": "1",
+            "gridRow": "3",
+            "display": "flex",
+            "flexDirection": "column",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "zIndex": 2
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "bottomRight_e5",
+          "toID": "main_e5",
+          "group": "e5",
+          "styleCss": {
+            "gridColumn": "2",
+            "gridRow": "3",
+            "display": "flex",
+            "flexDirection": "column",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "zIndex": 2
+          }
+        },
+        { "cmd": "soundPlayerAction", "soundSource": "soundEffect_success" }
+      ],
+      "code": "CSK002_008",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "topLeft_e5",
+          "img": "CSK_daurang.png",
+          "group": "e5",
+          "styleCss": {
+            "filter": "drop-shadow(0 0 16px rgb(255, 255, 255))",
+            "borderRadius": "20px",
+            "width": "350px",
+            "height": "350px",
+            "opacity": 0,
+            "animation": "fadeInSlideLeft 0.8s ease-out forwards"
+          }
+        },
+        { "cmd": "soundPlayerAction", "soundSource": "soundEffect_success" }
+      ],
+      "code": "CSK002_009",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "topRight_e5",
+          "img": "CSK_pain.png",
+          "group": "e5",
+          "styleCss": {
+            "filter": "drop-shadow(0 0 16px rgb(255, 255, 255))",
+            "borderRadius": "20px",
+            "width": "350px",
+            "height": "350px",
+            "opacity": 0,
+            "animation": "fadeInSlideRight 0.8s ease-out forwards"
+          }
+        }
+      ],
+      "code": "CSK002_010",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "bottomLeft_e5",
+          "img": "CSK_headache.png",
+          "group": "e5",
+          "styleCss": {
+            "filter": "drop-shadow(0 0 16px rgb(255, 255, 255))",
+            "borderRadius": "20px",
+            "order": "1",
+            "width": "350px",
+            "height": "350px",
+            "opacity": 0,
+            "animation": "fadeInSlideLeft 0.8s ease-out forwards"
+          }
+        }
+      ],
+      "code": "CSK002_011",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "bottomRight_e5",
+          "img": "CSK_008.png",
+          "group": "e5",
+          "styleCss": {
+            "filter": "drop-shadow(0 0 16px rgb(255, 255, 255))",
+            "borderRadius": "20px",
+            "order": "1",
+            "width": "350px",
+            "height": "350px",
+            "opacity": 0,
+            "animation": "fadeInSlideRight 0.8s ease-out forwards"
+          }
+        }
+      ],
+      "code": "CSK002_012",
+      "timeFixed": null,
+      "stt": null
+    },
+    {
+      "actions": [
+        {
+          "cmd": "divAction",
+          "id": "BG001_f1",
+          "group": "f1",
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "bottom": 0,
+            "left": 0,
+            "right": 0
+          }
+        },
+        {
+          "cmd": "imageViewActionToID",
+          "toID": "BG001_f1",
+          "group": "f1",
+          "img": "BG_005.png",
+          "styleCss": {
+            "position": "absolute",
+            "top": 0,
+            "left": 0,
+            "width": "100%",
+            "height": "100%",
+            "objectFit": "cover"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "main_f1",
+          "group": "f1",
+          "styleCss": {
+            "position": "absolute",
+            "inset": 0,
+            "top": "3%",
+            "display": "flex",
+            "flexDirection": "column",
+            "padding": "50px"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "textCont_f1",
+          "toID": "main_f1",
+          "group": "f1",
+          "styleCss": {
+            "position": "relative",
+            "display": "flex",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "textAlign": "center",
+            "height": "25%",
+            "zIndex": 2
+          }
+        },
+        {
+          "cmd": "typingText",
+          "text": "📌 Nếu bạn có 1 trong các dấu hiệu này…",
+          "toID": "textCont_f1",
+          "noTyping": true,
+          "group": "f1",
+          "styleCss": {
+            "color": "yellow",
+            "fontWeight": 800,
+            "lineHeight": 1.75,
+            "letterSpacing": "0.5px",
+            "fontSize": "100px",
+            "animation": "zoomIn 1s ease-in-out forwards"
+          }
+        },
+        {
+          "cmd": "divAction",
+          "id": "imgCont_f1",
+          "toID": "main_f1",
+          "group": "f1",
+          "styleCss": {
+            "marginTop": "200px",
+            "display": "flex",
+            "position": "relative",
+            "alignItems": "center",
+            "justifyContent": "center",
+            "height": "40%",
+            "width": "100%"
+          }
+        },
+        {
+          "cmd": "imageViewActionToID",
+          "img": "CSK_doctor.png",
+          "toID": "imgCont_f1",
+          "group": "f1",
+          "styleCss": {
+            "filter": "drop-shadow(0 0 16px rgb(255, 255, 255))",
+            "borderRadius": "20px",
+            "height": "500px",
+            "width": "500px",
+            "animation": "zoomIn 1s ease-in-out forwards"
+          }
+        }
+      ],
+      "code": "CSK002_013",
+      "timeFixed": null,
+      "stt": null
+    }
+  ]
+]
