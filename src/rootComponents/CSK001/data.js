@@ -1,41 +1,59 @@
 // ✅ Import JSON trực tiếp
-import DataFront from "./data_Front_001.json" with { type: "json" };
-import { keepOnlyActionsCodeTimeFixedStt } from "../../components/ActionOrchestrator/utils/dataSupportFuntions.js";
-import { CMD_Fetch } from "../../layouts/groupUtils.js";
-import { Logger } from "../../utils/logger.js";
+import DataFront from './data_Front_001.json' with { type: 'json' };
+import { keepOnlyActionsCodeTimeFixedStt } from '../../components/ActionOrchestrator/utils/dataSupportFuntions.js';
+import { CMD_Fetch } from '../../layouts/groupUtils.js';
+import { Logger } from '../../utils/logger.js';
 
-// Import Group Handlers
-import group1_1 from "../../layouts/group1/group1_1.js";
-import group1_2 from "../../layouts/group1/group1_2.js";
-import group2_2 from "../../layouts/group2/group2_2.js";
-import group4_1 from "../../layouts/group4/group4_1.js";
-import group5_1 from "../../layouts/group5/group5_1.js";
+import group1_1 from '../../layouts/mode1/group1_1.js';
+import group2_1 from '../../layouts/mode1/group2_1.js';
+import group3_1 from '../../layouts/mode1/group3_1.js';
+
+import group1_2 from '../../layouts/mode2/group1_2.js';
+import group2_2 from '../../layouts/mode2/group2_2.js';
+import group3_2 from '../../layouts/mode2/group3_2.js';
+import group4_2 from '../../layouts/mode2/group4_2.js';
+import group5_2 from '../../layouts/mode2/group5_2.js';
+
+import group1_3 from '../../layouts/mode3/group1_3.js';
+import group2_3 from '../../layouts/mode3/group2_3.js';
+import group3_3 from '../../layouts/mode3/group3_3.js';
+import group4_3 from '../../layouts/mode3/group4_3.js';
+import group5_3 from '../../layouts/mode3/group5_3.js';
 
 const handlerMap = {
-  //chữ đè lên ảnh
+  //chữ và ảnh
+  //chữ trên ảnh dưới
   group1_1: group1_1,
-  //text trên ảnh dưới
+  group2_1: group2_1,
+  group3_1: group3_1,
+  //chữ ảnh ảnh chữ
   group1_2: group1_2,
-  //obj1 top (image+text), obj2 bottom (image+text)
   group2_2: group2_2,
-  //1 ô tả, liệt kê 3 thằng ở dưới
-  group4_1: group4_1,
-  //chữ ở giữa, 4 ảnh xung quanh
-  group5_1: group5_1,
+  group3_2: group3_2,
+  group4_2: group4_2,
+  group5_2: group5_2,
+  //chữ ảnh và ảnh
+  group1_3: group1_3,
+  group2_3: group2_3,
+  group3_3: group3_3,
+  group4_3: group4_3,
+  group5_3: group5_3,
 };
 
 //controller cho group
 function handleItem(group) {
+  console.log('handleItem called with group:', group);
   const groupStr = String(group.length);
   const typeStr = String(group[0].mode);
 
   const key = `group${groupStr}_${typeStr}`;
+  console.log('Looking for handler with key:', key);
   const handler = handlerMap[key];
 
   if (!handler) {
-  throw new Error(`Handler not found for layout: ${key}`);
-}
-return handler(group);
+    throw new Error(`Handler not found for layout: ${key}`);
+  }
+  return handler(group);
 }
 
 //video tổng
@@ -77,7 +95,7 @@ DataFront.forEach((videoData) => {
   }
 
   const end_sound = {
-    code: "SOUNDCHUNG_SpaceSound",
+    code: 'SOUNDCHUNG_SpaceSound',
     timeFixed: 0.5,
   };
   video.push(end_sound);
@@ -85,9 +103,7 @@ DataFront.forEach((videoData) => {
 });
 
 if (videoData01.length > 0) {
-  Logger.debug("First video data:", videoData01[0]);
+  Logger.debug('First video data:', videoData01[0]);
 }
-
-
 
 export { videoData01 };

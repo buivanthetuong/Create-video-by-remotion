@@ -1,0 +1,19 @@
+[
+  [
+    {
+      "code": "CSK002_001",
+      "script": "Bạn có đoán được đây là khớp nào trên cơ thể mình không?",
+      "group": "a4",
+      "mode": 1,
+      "text": "🧐 Đây là khớp nào trên cơ thể?",
+      "textStyle": 2,
+      "textEffect": "spinSlowDown",
+      "img": "CSK_thaiduongham.png",
+      "imgStyle": "1",
+      "imgEffect": "spinSlowDown",
+      "soundEffect": "soundEffect_suprise",
+      "backgroundIMG": "BG_005.png",
+      "backgroundSound": "SOUNDCHUNG_1"
+    }
+  ]
+]

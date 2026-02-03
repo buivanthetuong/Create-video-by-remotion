@@ -9,7 +9,7 @@ import {
   delayRender,
 } from "remotion";
 import { getBackgroundForId } from "../../utils/getColorFromID";
-import SoundPlay from "../../otherComponent/soundPlay";
+import SoundPlay from "../../Services/soundPlay";
 import TrungGianXuly from "../../components/ActionOrchestrator/ActionOrchestrator";
 
 const AudioDurationLoader = ({ audioPath, onDurationLoad, index }) => {

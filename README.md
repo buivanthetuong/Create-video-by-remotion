@@ -5,15 +5,17 @@ Dự án tạo video tự động sử dụng **Remotion** framework để rende
 ## 📋 Giới Thiệu
 
 Dự án này cho phép tạo video tự động từ dữ liệu JSON với các tính năng:
+
 - ✨ Hệ thống action-based để tạo animations và effects
 - 🎨 Layout system linh hoạt với nhiều group templates
-- 🎵 Tích hợp audio và background sound  
+- 🎵 Tích hợp audio và background sound
 - 📊 Data-driven với JSON configuration
 - 🚀 Batch rendering cho nhiều video cùng lúc
 
 ## 🚀 Cài Đặt
 
 ### Yêu cầu
+
 - Node.js >= 18.x
 - npm hoặc yarn
 
@@ -84,7 +86,7 @@ video-auto-create-pj/
 │   │   ├── group1/          # Layout type 1
 │   │   ├── group2/          # Layout type 2
 │   │   └── groupUtils.js    # Shared utilities
-│   ├── otherComponent/      # Service components (audio, video players)
+│   ├── Services/      # Service components (audio, video players)
 │   ├── rootComponents/      # Composition definitions
 │   │   └── CSK001/         # Main project composition
 │   │       ├── data.js     # Data processor
@@ -108,9 +110,9 @@ video-auto-create-pj/
 Chỉnh sửa [`root-config.js`](./root-config.js) để cấu hình project:
 
 ```javascript
-export const root_JSX = "CSK001";           // Composition name
-export const folder_render = "CSK_001";     // Output folder
-export const name_video = "CSK001";         // Video name prefix
+export const root_JSX = "CSK001"; // Composition name
+export const folder_render = "CSK_001"; // Output folder
+export const name_video = "CSK001"; // Video name prefix
 ```
 
 ### Video Settings
@@ -119,11 +121,11 @@ Chỉnh sửa `VIDEO_CONFIG` trong [`render-all_video_tiktok.js`](./render-all_v
 
 ```javascript
 const VIDEO_CONFIG = {
-  width: 1080,      // Video width
-  height: 1920,     // Video height (TikTok/Shorts format)
-  fps: 30,          // Frame rate
-  codec: "h264",    // Video codec
-  crf: 18,          // Quality (18 = high, 23 = medium)
+  width: 1080, // Video width
+  height: 1920, // Video height (TikTok/Shorts format)
+  fps: 30, // Frame rate
+  codec: "h264", // Video codec
+  crf: 18, // Quality (18 = high, 23 = medium)
 };
 ```
 
@@ -192,16 +194,19 @@ Hỗ trợ các layout groups:
 ## 🐛 Troubleshooting
 
 ### Video không render
+
 - Kiểm tra `root-config.js` có đúng composition name
 - Đảm bảo data JSON hợp lệ
 - Check console logs để xem error details
 
 ### Audio không play
+
 - Đảm bảo audio file tồn tại trong `public/audio/`
 - Check audio format (hỗ trợ .mp3, .wav)
 - Xem console để biết path resolution errors
 
 ### Out of memory
+
 - Giảm `concurrency` trong `remotion.config.js`
 - Render từng video một thay vì batch
 - Giảm video resolution hoặc quality
