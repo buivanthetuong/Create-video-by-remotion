@@ -12,9 +12,7 @@ import group1_2 from '../../layouts/mode2/group1_2.js';
 import group2_2 from '../../layouts/mode2/group2_2.js';
 import group3_2 from '../../layouts/mode2/group3_2.js';
 import group4_2 from '../../layouts/mode2/group4_2.js';
-import group5_2 from '../../layouts/mode2/group5_2.js';
 
-import group1_3 from '../../layouts/mode3/group1_3.js';
 import group2_3 from '../../layouts/mode3/group2_3.js';
 import group3_3 from '../../layouts/mode3/group3_3.js';
 import group4_3 from '../../layouts/mode3/group4_3.js';
@@ -31,9 +29,8 @@ const handlerMap = {
   group2_2: group2_2,
   group3_2: group3_2,
   group4_2: group4_2,
-  group5_2: group5_2,
   //chữ ảnh và ảnh
-  group1_3: group1_3,
+
   group2_3: group2_3,
   group3_3: group3_3,
   group4_3: group4_3,

@@ -68,7 +68,7 @@ export default function group1_2(arr) {
         cmd: CMD_Fetch.typingText,
         text: arr[0].text,
         toID: centerDiv,
-        noTyping: true,
+        noTyping: false,
         group: arr[0].group,
         styleCss: {
           fontSize: '100px',
