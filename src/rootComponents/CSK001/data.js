@@ -58,7 +58,7 @@ let videoData01 = [];
 DataFront.forEach((videoData) => {
   const bg_sound = {
     cmd: CMD_Fetch.soundPlayerAction,
-    volume: 0.1,
+    volume: 0.23,
     ToEndFrame: true,
     soundSource: videoData[0].backgroundSound,
   };
@@ -91,11 +91,12 @@ DataFront.forEach((videoData) => {
     video[0].actions.unshift(bg_sound);
   }
 
-  const end_sound = {
-    code: 'SOUNDCHUNG_SpaceSound',
-    timeFixed: 0.5,
-  };
-  video.push(end_sound);
+  // const end_sound = {
+  //   code: 'SOUNDCHUNG_SpaceSound',
+  //   timeFixed: 0.5,
+  // };
+  // video.push(end_sound);
+  
   videoData01.push(video);
 });
 

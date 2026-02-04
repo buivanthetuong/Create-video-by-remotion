@@ -31,6 +31,10 @@ const ObjEffect = {
     animation: 'bounceIn 0.9s ease-out forwards',
   },
 
+  // Hiệu ứng bật nảy vào lặp lại mãi mãi
+  bounceInInfinity: {
+    animation: 'bounceIn 1.8s ease-in-out infinite alternate',
+  },
   // Phóng to từ tâm
   zoomIn: {
     animation: 'zoomIn 1s ease-out forwards',

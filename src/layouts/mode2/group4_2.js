@@ -1,4 +1,4 @@
-import { CMD_Fetch, getTextCSS, getImgCSS } from '../groupUtils.js';
+import { CMD_Fetch, getTextCSS, getImgCSS, getEffect } from '../groupUtils.js';
 
 export default function group4_2(arr) {
   const uid = `${arr[0].group}`;
@@ -52,7 +52,7 @@ export default function group4_2(arr) {
           inset: 0,
           display: 'flex',
           flexDirection: 'column',
-          padding: '40px',
+          padding: '100px 40px 40px 40px',
         },
       },
       // Div trên — 45%: phía trên 15% chữ arr[0], phía dưới 30% ảnh arr[0]
@@ -99,6 +99,8 @@ export default function group4_2(arr) {
         toID: topTextDiv,
         group: arr[0].group,
         styleCss: {
+          ...getTextCSS('1'),
+          ...getEffect('bounceIn'),
           fontSize: '60px',
         },
       },
@@ -108,8 +110,9 @@ export default function group4_2(arr) {
         img: arr[0].img,
         group: arr[0].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('bounceInInfinity'),
+          width: '350px',
+          height: '350px',
           objectFit: 'contain',
         },
       },
@@ -132,7 +135,7 @@ export default function group4_2(arr) {
         toID: bottomDiv,
         group: arr[0].group,
         styleCss: {
-          flex: 1,
+          height: '25%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -145,7 +148,7 @@ export default function group4_2(arr) {
         toID: bottomDiv,
         group: arr[0].group,
         styleCss: {
-          flex: 1,
+          height: '25%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -158,7 +161,7 @@ export default function group4_2(arr) {
         toID: bottomDiv,
         group: arr[0].group,
         styleCss: {
-          flex: 1,
+          height: '25%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -182,6 +185,8 @@ export default function group4_2(arr) {
         toID: bottomText1Div,
         group: arr[1].group,
         styleCss: {
+          ...getTextCSS('2'),
+          ...getEffect('fadeInSlideLeft'),
           fontSize: '60px',
         },
       },
@@ -201,6 +206,8 @@ export default function group4_2(arr) {
         toID: bottomText2Div,
         group: arr[2].group,
         styleCss: {
+          ...getTextCSS('2'),
+          ...getEffect('fadeInSlideRight'),
           fontSize: '60px',
         },
       },
@@ -220,6 +227,8 @@ export default function group4_2(arr) {
         toID: bottomText3Div,
         group: arr[3].group,
         styleCss: {
+          ...getTextCSS('2'),
+          ...getEffect('fadeInSlideLeft'),
           fontSize: '60px',
         },
       },

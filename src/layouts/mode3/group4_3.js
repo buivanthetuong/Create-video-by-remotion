@@ -52,7 +52,8 @@ export default function group4_3(arr) {
           inset: 0,
           display: 'flex',
           flexDirection: 'column',
-          padding: '40px',
+          justifyContent: 'center',
+          padding: '40px 40px 120px 40px',
         },
       },
       // Div trên — hiển thị ảnh arr[1] (nội dung đẩy qua obj2)
@@ -76,7 +77,7 @@ export default function group4_3(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          flex: 1,
+          height: '40%',
           display: 'flex',
           flexDirection: 'row',
           gap: '20px',
@@ -89,7 +90,7 @@ export default function group4_3(arr) {
         toID: midDiv,
         group: arr[0].group,
         styleCss: {
-          width: '70%',
+          width: '65%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -102,7 +103,7 @@ export default function group4_3(arr) {
         toID: midDiv,
         group: arr[0].group,
         styleCss: {
-          width: '30%',
+          width: '35%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -114,6 +115,7 @@ export default function group4_3(arr) {
         toID: midTextDiv,
         group: arr[0].group,
         styleCss: {
+          ...getTextCSS('1'),
           fontSize: '60px',
         },
       },
@@ -135,7 +137,7 @@ export default function group4_3(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '30%',
+          height: '25%',
           display: 'flex',
           flexDirection: 'row',
           gap: '20px',
@@ -183,8 +185,8 @@ export default function group4_3(arr) {
         img: arr[1].img,
         group: arr[1].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          width: '300px',
+          height: '300px',
           objectFit: 'contain',
         },
       },
@@ -204,8 +206,8 @@ export default function group4_3(arr) {
         img: arr[2].img,
         group: arr[2].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          width: '300px',
+          height: '300px',
           objectFit: 'contain',
         },
       },
@@ -225,8 +227,8 @@ export default function group4_3(arr) {
         img: arr[3].img,
         group: arr[3].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          width: '300px',
+          height: '300px',
           objectFit: 'contain',
         },
       },

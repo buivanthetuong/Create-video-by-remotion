@@ -1,4 +1,4 @@
-import { CMD_Fetch, getTextCSS, getImgCSS } from '../groupUtils.js';
+import { CMD_Fetch, getTextCSS, getImgCSS, getEffect } from '../groupUtils.js';
 
 export default function group5_3(arr) {
   const uid = `${arr[0].group}`;
@@ -53,6 +53,8 @@ export default function group5_3(arr) {
           position: 'absolute',
           inset: 0,
           display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
           flexDirection: 'column',
           padding: '40px',
         },
@@ -64,7 +66,8 @@ export default function group5_3(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '25%',
+          width: '100%',
+          height: '20%',
           display: 'flex',
           flexDirection: 'row',
           gap: '20px',
@@ -78,9 +81,10 @@ export default function group5_3(arr) {
         group: arr[0].group,
         styleCss: {
           flex: 1,
+          height: '100%',
           display: 'flex',
-          alignItems: 'center',
           justifyContent: 'center',
+          alignItems: 'center',
         },
       },
       {
@@ -90,9 +94,10 @@ export default function group5_3(arr) {
         group: arr[0].group,
         styleCss: {
           flex: 1,
+          height: '100%',
           display: 'flex',
-          alignItems: 'center',
           justifyContent: 'center',
+          alignItems: 'center',
         },
       },
       // Div giữa — chữ trái 70%, ảnh phải 30% (arr[0])
@@ -102,7 +107,7 @@ export default function group5_3(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          flex: 1,
+          height: '35%',
           display: 'flex',
           flexDirection: 'row',
           gap: '20px',
@@ -115,7 +120,7 @@ export default function group5_3(arr) {
         toID: midDiv,
         group: arr[0].group,
         styleCss: {
-          width: '70%',
+          width: '65%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -128,7 +133,7 @@ export default function group5_3(arr) {
         toID: midDiv,
         group: arr[0].group,
         styleCss: {
-          width: '30%',
+          width: '35%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -141,6 +146,7 @@ export default function group5_3(arr) {
         group: arr[0].group,
         styleCss: {
           ...getTextCSS(arr[0].textStyle),
+          ...getEffect('fadeInSlideLeft'),
           fontSize: '60px',
         },
       },
@@ -150,9 +156,10 @@ export default function group5_3(arr) {
         img: arr[0].img,
         group: arr[0].group,
         styleCss: {
-          ...getImgCSS(arr[0].imgStyle),
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('fadeInSlideLeft'),
+          ...getImgCSS('1'),
+          width: '350px',
+          height: '350px',
           objectFit: 'contain',
         },
       },
@@ -163,7 +170,8 @@ export default function group5_3(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '30%',
+          width: '100%',
+          height: '20%',
           display: 'flex',
           flexDirection: 'row',
           gap: '20px',
@@ -211,9 +219,9 @@ export default function group5_3(arr) {
         img: arr[1].img,
         group: arr[1].group,
         styleCss: {
-          ...getImgCSS(arr[1].imgStyle),
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('fadeInSlideLeft'),
+          width: '300px',
+          height: '300px',
           objectFit: 'contain',
         },
       },
@@ -233,9 +241,9 @@ export default function group5_3(arr) {
         img: arr[2].img,
         group: arr[2].group,
         styleCss: {
-          ...getImgCSS(arr[2].imgStyle),
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('fadeInSlideRight'),
+          width: '300px',
+          height: '300px',
           objectFit: 'contain',
         },
       },
@@ -255,9 +263,9 @@ export default function group5_3(arr) {
         img: arr[3].img,
         group: arr[3].group,
         styleCss: {
-          ...getImgCSS(arr[3].imgStyle),
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('fadeInSlideLeft'),
+          width: '300px',
+          height: '300px',
           objectFit: 'contain',
         },
       },
@@ -277,9 +285,9 @@ export default function group5_3(arr) {
         img: arr[4].img,
         group: arr[4].group,
         styleCss: {
-          ...getImgCSS(arr[4].imgStyle),
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('fadeInSlideRight'),
+          width: '300px',
+          height: '300px',
           objectFit: 'contain',
         },
       },
