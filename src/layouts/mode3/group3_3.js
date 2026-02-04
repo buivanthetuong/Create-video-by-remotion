@@ -1,4 +1,4 @@
-import { CMD_Fetch, getTextCSS, getImgCSS } from '../groupUtils.js';
+import { CMD_Fetch, getTextCSS, getImgCSS, getEffect } from '../groupUtils.js';
 
 export default function group3_3(arr) {
   const uid = `${arr[0].group}`;
@@ -51,7 +51,7 @@ export default function group3_3(arr) {
           inset: 0,
           display: 'flex',
           flexDirection: 'column',
-          padding: '40px',
+          padding: '100px 40px 40px 40px',
         },
       },
       // Div trên — 45%: chữ trái 65%, ảnh phải 35% (arr[0])
@@ -61,7 +61,7 @@ export default function group3_3(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '45%',
+          height: '30%',
           display: 'flex',
           flexDirection: 'row',
           gap: '20px',
@@ -99,7 +99,10 @@ export default function group3_3(arr) {
         toID: topTextDiv,
         group: arr[0].group,
         styleCss: {
+          ...getTextCSS('1'),
+          ...getEffect('fadeInSlideLeft'),
           fontSize: '60px',
+          padding: '20px 40px 20px 40px',
         },
       },
       {
@@ -108,6 +111,8 @@ export default function group3_3(arr) {
         img: arr[0].img,
         group: arr[0].group,
         styleCss: {
+          ...getImgCSS('1'),
+          ...getEffect('fadeInSlideLeft'),
           maxWidth: '100%',
           maxHeight: '100%',
           objectFit: 'contain',
@@ -168,8 +173,9 @@ export default function group3_3(arr) {
         img: arr[1].img,
         group: arr[1].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('fadeInSlideLeft'),
+          maxWidth: '80%',
+          maxHeight: '80%',
           objectFit: 'contain',
         },
       },
@@ -189,8 +195,9 @@ export default function group3_3(arr) {
         img: arr[2].img,
         group: arr[2].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('fadeInSlideRight'),
+          maxWidth: '80%',
+          maxHeight: '80%',
           objectFit: 'contain',
         },
       },

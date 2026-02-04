@@ -1,4 +1,4 @@
-import { CMD_Fetch, getTextCSS, getImgCSS } from '../groupUtils.js';
+import { CMD_Fetch, getTextCSS, getImgCSS, getEffect } from '../groupUtils.js';
 
 export default function group2_2(arr) {
   const uid = `${arr[0].group}`;
@@ -49,7 +49,7 @@ export default function group2_2(arr) {
           inset: 0,
           display: 'flex',
           flexDirection: 'column',
-          padding: '40px',
+          padding: '100px 40px 40px 40px',
         },
       },
       // Div trên — 45%: phía trên 15% chữ arr[0], phía dưới 30% ảnh arr[0]
@@ -59,7 +59,7 @@ export default function group2_2(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '45%',
+          height: '40%',
           display: 'flex',
           flexDirection: 'column',
           zIndex: 2,
@@ -71,7 +71,7 @@ export default function group2_2(arr) {
         toID: topDiv,
         group: arr[0].group,
         styleCss: {
-          height: '33.33%',
+          height: '35%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -84,7 +84,7 @@ export default function group2_2(arr) {
         toID: topDiv,
         group: arr[0].group,
         styleCss: {
-          height: '66.67%',
+          height: '65%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -96,6 +96,8 @@ export default function group2_2(arr) {
         toID: topTextDiv,
         group: arr[0].group,
         styleCss: {
+          ...getEffect('fadeInScale'),
+          ...getTextCSS('1'),
           fontSize: '60px',
         },
       },
@@ -105,8 +107,10 @@ export default function group2_2(arr) {
         img: arr[0].img,
         group: arr[0].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          width: '450px',
+          height: '450px',
+          ...getImgCSS('1'),
+          ...getEffect('bounceIn'),
           objectFit: 'contain',
         },
       },
@@ -117,7 +121,7 @@ export default function group2_2(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '55%',
+          height: '40%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -142,7 +146,9 @@ export default function group2_2(arr) {
         toID: bottomDiv,
         group: arr[1].group,
         styleCss: {
-          fontSize: '60px',
+          ...getEffect('fadeInSlideLeft'),
+          ...getTextCSS('2'),
+          fontSize: '65px',
         },
       },
       {

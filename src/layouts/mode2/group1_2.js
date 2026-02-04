@@ -1,4 +1,4 @@
-import { CMD_Fetch, getTextCSS, getImgCSS } from '../groupUtils.js';
+import { CMD_Fetch, getTextCSS, getImgCSS, getEffect } from '../groupUtils.js';
 
 export default function group1_2(arr) {
   const uid = `${arr[0].group}`;
@@ -71,6 +71,8 @@ export default function group1_2(arr) {
         noTyping: false,
         group: arr[0].group,
         styleCss: {
+          ...getTextCSS('1'),
+          ...getEffect('bounceIn'),
           fontSize: '100px',
         },
       },

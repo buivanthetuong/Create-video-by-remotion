@@ -1,4 +1,4 @@
-import { CMD_Fetch, getTextCSS, getImgCSS } from '../groupUtils.js';
+import { CMD_Fetch, getTextCSS, getImgCSS, getEffect } from '../groupUtils.js';
 
 export default function group1_1(arr) {
   const uid = `${arr[0].group}`;
@@ -47,7 +47,7 @@ export default function group1_1(arr) {
           inset: 0,
           display: 'flex',
           flexDirection: 'column',
-          padding: '40px',
+          padding: '100px 40px 40px 40px',
         },
       },
       // Top Div – 40% – chứa chữ
@@ -57,7 +57,7 @@ export default function group1_1(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '40%',
+          height: '30%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -71,17 +71,19 @@ export default function group1_1(arr) {
         toID: topDiv,
         group: arr[0].group,
         styleCss: {
-          fontSize: '60px',
+          ...getTextCSS('1'),
+          ...getEffect('fadeInScale'),
+          fontSize: '80px',
         },
       },
-      // Bottom Div – 60% – chứa ảnh
+      // Bottom Div – 50% – chứa ảnh
       {
         cmd: CMD_Fetch.divAction,
         id: bottomDiv,
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '60%',
+          height: '50%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -94,8 +96,10 @@ export default function group1_1(arr) {
         img: arr[0].img,
         group: arr[0].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getImgCSS('1'),
+          ...getEffect('fadeInScale'),
+          width: '500px',
+          height: '500px',
           objectFit: 'contain',
         },
       },

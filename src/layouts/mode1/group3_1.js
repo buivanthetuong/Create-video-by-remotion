@@ -1,4 +1,4 @@
-import { CMD_Fetch, getTextCSS, getImgCSS } from '../groupUtils.js';
+import { CMD_Fetch, getTextCSS, getImgCSS, getEffect } from '../groupUtils.js';
 
 export default function group3_1(arr) {
   const uid = `${arr[0].group}`;
@@ -54,7 +54,9 @@ export default function group3_1(arr) {
           inset: 0,
           display: 'flex',
           flexDirection: 'column',
-          padding: '40px',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: '100px 40px 40px 40px',
         },
       },
       // Row 1 — 30%: trái 70% (chữ), phải 30% (ảnh)
@@ -64,7 +66,7 @@ export default function group3_1(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '30%',
+          height: '25%',
           display: 'flex',
           flexDirection: 'row',
           gap: '20px',
@@ -77,7 +79,7 @@ export default function group3_1(arr) {
         toID: topRow,
         group: arr[0].group,
         styleCss: {
-          width: '70%',
+          width: '65%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -90,7 +92,7 @@ export default function group3_1(arr) {
         toID: topRow,
         group: arr[0].group,
         styleCss: {
-          width: '30%',
+          width: '35%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -102,7 +104,9 @@ export default function group3_1(arr) {
         toID: topLeftDiv,
         group: arr[0].group,
         styleCss: {
-          fontSize: '50px',
+          ...getTextCSS('2'),
+          ...getEffect('fadeInSlideLeft'),
+          fontSize: '60px',
         },
       },
       {
@@ -111,8 +115,9 @@ export default function group3_1(arr) {
         img: arr[0].img,
         group: arr[0].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('fadeInSlideLeft'),
+          maxWidth: '90%',
+          maxHeight: '90%',
           objectFit: 'contain',
         },
       },
@@ -123,7 +128,7 @@ export default function group3_1(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '40%',
+          height: '25%',
           display: 'flex',
           flexDirection: 'row',
           gap: '20px',
@@ -136,7 +141,7 @@ export default function group3_1(arr) {
         toID: midRow,
         group: arr[0].group,
         styleCss: {
-          width: '30%',
+          width: '35%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -149,7 +154,7 @@ export default function group3_1(arr) {
         toID: midRow,
         group: arr[0].group,
         styleCss: {
-          width: '70%',
+          width: '65%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -162,7 +167,7 @@ export default function group3_1(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '30%',
+          height: '25%',
           display: 'flex',
           flexDirection: 'row',
           gap: '20px',
@@ -175,7 +180,7 @@ export default function group3_1(arr) {
         toID: bottomRow,
         group: arr[0].group,
         styleCss: {
-          width: '70%',
+          width: '65%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -188,7 +193,7 @@ export default function group3_1(arr) {
         toID: bottomRow,
         group: arr[0].group,
         styleCss: {
-          width: '30%',
+          width: '35%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -208,20 +213,23 @@ export default function group3_1(arr) {
       {
         cmd: CMD_Fetch.typingText,
         text: arr[1].text,
-        toID: midLeftDiv,
+        toID: midRightDiv,
         group: arr[1].group,
         styleCss: {
-          fontSize: '50px',
+          ...getTextCSS('2'),
+          ...getEffect('fadeInSlideRight'),
+          fontSize: '60px',
         },
       },
       {
         cmd: CMD_Fetch.imageViewActionToID,
-        toID: midRightDiv,
+        toID: midLeftDiv,
         img: arr[1].img,
         group: arr[1].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('fadeInSlideRight'),
+          maxWidth: '90%',
+          maxHeight: '90%',
           objectFit: 'contain',
         },
       },
@@ -241,7 +249,9 @@ export default function group3_1(arr) {
         toID: bottomLeftDiv,
         group: arr[2].group,
         styleCss: {
-          fontSize: '50px',
+          ...getTextCSS('2'),
+          ...getEffect('fadeInSlideLeft'),
+          fontSize: '60px',
         },
       },
       {
@@ -250,8 +260,9 @@ export default function group3_1(arr) {
         img: arr[2].img,
         group: arr[2].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('fadeInSlideLeft'),
+          maxWidth: '90%',
+          maxHeight: '90%',
           objectFit: 'contain',
         },
       },

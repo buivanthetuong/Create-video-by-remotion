@@ -1,4 +1,4 @@
-import { CMD_Fetch, getTextCSS, getImgCSS } from '../groupUtils.js';
+import { CMD_Fetch, getTextCSS, getImgCSS, getEffect } from '../groupUtils.js';
 
 export default function group3_2(arr) {
   const uid = `${arr[0].group}`;
@@ -51,7 +51,7 @@ export default function group3_2(arr) {
           inset: 0,
           display: 'flex',
           flexDirection: 'column',
-          padding: '40px',
+          padding: '100px 40px 40px 40px',
         },
       },
       // Div trên — 45%: phía trên 15% chữ arr[0], phía dưới 30% ảnh arr[0]
@@ -61,9 +61,10 @@ export default function group3_2(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '45%',
+          height: '40%',
           display: 'flex',
           flexDirection: 'column',
+          gap: '60px',
           zIndex: 2,
         },
       },
@@ -73,7 +74,7 @@ export default function group3_2(arr) {
         toID: topDiv,
         group: arr[0].group,
         styleCss: {
-          height: '33.33%',
+          height: '40%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -86,7 +87,7 @@ export default function group3_2(arr) {
         toID: topDiv,
         group: arr[0].group,
         styleCss: {
-          height: '66.67%',
+          height: '60%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -96,9 +97,12 @@ export default function group3_2(arr) {
         cmd: CMD_Fetch.typingText,
         text: arr[0].text,
         toID: topTextDiv,
+        noTyping: false,
         group: arr[0].group,
         styleCss: {
-          fontSize: '60px',
+          ...getTextCSS('1'),
+          ...getEffect('fadeInScale'),
+          fontSize: '65px',
         },
       },
       {
@@ -107,8 +111,10 @@ export default function group3_2(arr) {
         img: arr[0].img,
         group: arr[0].group,
         styleCss: {
-          maxWidth: '100%',
-          maxHeight: '100%',
+          ...getEffect('fadeInSlideLeft'),
+          ...getImgCSS('1'),
+          width: '400px',
+          height: '4000px',
           objectFit: 'contain',
         },
       },
@@ -119,9 +125,12 @@ export default function group3_2(arr) {
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '55%',
+          height: '40%',
           display: 'flex',
           flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: '50px', // thêm khoảng cách giữa hai div con
           zIndex: 2,
         },
       },
@@ -131,7 +140,8 @@ export default function group3_2(arr) {
         toID: bottomDiv,
         group: arr[0].group,
         styleCss: {
-          flex: 1,
+          height: '20%',
+          width: '90%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -144,7 +154,8 @@ export default function group3_2(arr) {
         toID: bottomDiv,
         group: arr[0].group,
         styleCss: {
-          flex: 1,
+          height: '20%',
+          width: '90%',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
@@ -168,7 +179,9 @@ export default function group3_2(arr) {
         toID: bottomTextTopDiv,
         group: arr[1].group,
         styleCss: {
-          fontSize: '60px',
+          ...getTextCSS('2'),
+          ...getEffect('fadeInScale'),
+          fontSize: '50px',
         },
       },
       {
@@ -187,7 +200,9 @@ export default function group3_2(arr) {
         toID: bottomTextBottomDiv,
         group: arr[2].group,
         styleCss: {
-          fontSize: '60px',
+          ...getTextCSS('2'),
+          ...getEffect('fadeInScale'),
+          fontSize: '50px',
         },
       },
       {
