@@ -1,10 +1,10 @@
-import React from "react";
-import { Html5Audio, Sequence, useCurrentFrame } from "remotion";
+import React from 'react';
+import { Html5Audio, Sequence, useCurrentFrame } from 'remotion';
 // import typingSound from "../../../../assets/soundDefault/TypingSoundCapcut.mp3";
 import {
   useAnimations,
   getAnimationStyle,
-} from "../../utils/animations/animationResolver.js";
+} from '../../utils/animations/animationResolver.js';
 
 /**
  * Component hiển thị text với typing animation
@@ -14,13 +14,13 @@ import {
 // ✅ SAU - Dùng path tương đối hoặc static path
 // const typingSound = "/assets/soundDefault/TypingSoundCapcut.mp3";
 const TypingText = ({
-  text = [{ text: "I love you!", type: "normal" }],
+  text = [{ text: 'I love you!', type: 'normal' }],
   frame,
   styCss = {},
   startFrame = 30,
   endFrame = 90,
   sound = true,
-  noTyping = false,
+  noTyping = true,
   fps = 30,
   data = {},
   dataAction = {},
@@ -41,7 +41,7 @@ const TypingText = ({
   if (frame < startFrame || frame > endFrame) return null;
 
   // ✅ Tạo chuỗi kết hợp từ array (chỉ type normal)
-  const combinedText = text.map((item) => item.text).join("");
+  const combinedText = text.map((item) => item.text).join('');
 
   // ✅ Tính progress
   const progress = noTyping

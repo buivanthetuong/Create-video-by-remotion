@@ -71,7 +71,6 @@ export default function group1_1(arr) {
         toID: topDiv,
         group: arr[0].group,
         styleCss: {
-          ...getTextCSS(arr[0].textStyle),
           fontSize: '60px',
         },
       },
@@ -95,7 +94,6 @@ export default function group1_1(arr) {
         img: arr[0].img,
         group: arr[0].group,
         styleCss: {
-          ...getImgCSS(arr[0].imgStyle),
           maxWidth: '100%',
           maxHeight: '100%',
           objectFit: 'contain',

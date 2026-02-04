@@ -1,11 +1,13 @@
 import { CMD_Fetch, getTextCSS, getImgCSS } from '../groupUtils.js';
 
-export default function group1_1(arr) {
+export default function group2_1(arr) {
   const uid = `${arr[0].group}`;
   const BG001 = `BG001_${uid}`;
   const mainContainer = `main_${uid}`;
+  const topRow = `topRow_${uid}`;
   const topLeftDiv = `topLeft_${uid}`;
   const topRightDiv = `topRight_${uid}`;
+  const bottomRow = `bottomRow_${uid}`;
   const bottomLeftDiv = `bottomLeft_${uid}`;
   const bottomRightDiv = `bottomRight_${uid}`;
 
@@ -13,7 +15,7 @@ export default function group1_1(arr) {
     actions: [
       // Background
       {
-        cmd: 'divAction',
+        cmd: CMD_Fetch.divAction,
         id: BG001,
         ToEndFrame: true,
         styleCss: {
@@ -39,7 +41,7 @@ export default function group1_1(arr) {
           objectFit: 'cover',
         },
       },
-      // Main container — 2 rows x 2 cols | left = 2fr, right = 1fr
+      // Main container
       {
         cmd: CMD_Fetch.divAction,
         id: mainContainer,
@@ -47,27 +49,48 @@ export default function group1_1(arr) {
         styleCss: {
           position: 'absolute',
           inset: 0,
-          display: 'grid',
-          gridTemplateColumns: '2fr 1fr',
-          gridTemplateRows: '1fr 1fr',
-          gap: '20px',
+          display: 'flex',
+          flexDirection: 'column',
           padding: '40px',
         },
       },
-      // Top Left — chữ arr[0]
+      // Hàng trên — 70% chữ arr[0], 30% ảnh arr[0]
       {
         cmd: CMD_Fetch.divAction,
-        id: topLeftDiv,
+        id: topRow,
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          gridColumn: '1',
-          gridRow: '1',
+          height: '50%',
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'row',
+          gap: '20px',
+          zIndex: 2,
+        },
+      },
+      {
+        cmd: CMD_Fetch.divAction,
+        id: topLeftDiv,
+        toID: topRow,
+        group: arr[0].group,
+        styleCss: {
+          width: '70%',
+          display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          zIndex: 2,
+          textAlign: 'center',
+        },
+      },
+      {
+        cmd: CMD_Fetch.divAction,
+        id: topRightDiv,
+        toID: topRow,
+        group: arr[0].group,
+        styleCss: {
+          width: '30%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
         },
       },
       {
@@ -76,23 +99,7 @@ export default function group1_1(arr) {
         toID: topLeftDiv,
         group: arr[0].group,
         styleCss: {
-          ...getTextCSS(arr[0].textStyle),
-        },
-      },
-      // Top Right — ảnh arr[0]
-      {
-        cmd: CMD_Fetch.divAction,
-        id: topRightDiv,
-        toID: mainContainer,
-        group: arr[0].group,
-        styleCss: {
-          gridColumn: '2',
-          gridRow: '1',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          zIndex: 2,
+          fontSize: '60px',
         },
       },
       {
@@ -101,42 +108,48 @@ export default function group1_1(arr) {
         img: arr[0].img,
         group: arr[0].group,
         styleCss: {
-          ...getImgCSS(arr[0].imgStyle),
-          width: '100%',
-          height: '100%',
+          maxWidth: '100%',
+          maxHeight: '100%',
           objectFit: 'contain',
         },
       },
-      // Bottom Left — chữ arr[1]
+      // Hàng dưới — 70% chữ arr[1], 30% ảnh arr[1] (nội dung đẩy qua obj2)
       {
         cmd: CMD_Fetch.divAction,
-        id: bottomLeftDiv,
+        id: bottomRow,
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          gridColumn: '1',
-          gridRow: '2',
+          height: '50%',
           display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
+          flexDirection: 'row',
+          gap: '20px',
           zIndex: 2,
         },
       },
-      // Bottom Right — ảnh arr[1]
+      {
+        cmd: CMD_Fetch.divAction,
+        id: bottomLeftDiv,
+        toID: bottomRow,
+        group: arr[0].group,
+        styleCss: {
+          width: '70%',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+        },
+      },
       {
         cmd: CMD_Fetch.divAction,
         id: bottomRightDiv,
-        toID: mainContainer,
+        toID: bottomRow,
         group: arr[0].group,
         styleCss: {
-          gridColumn: '2',
-          gridRow: '2',
+          width: '30%',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          zIndex: 2,
         },
       },
       // Sound effect
@@ -150,26 +163,23 @@ export default function group1_1(arr) {
 
   const obj2 = {
     actions: [
-      // Chữ arr[1] vào Bottom Left
       {
         cmd: CMD_Fetch.typingText,
         text: arr[1].text,
         toID: bottomLeftDiv,
         group: arr[1].group,
         styleCss: {
-          ...getTextCSS(arr[1].textStyle),
+          fontSize: '60px',
         },
       },
-      // Ảnh arr[1] vào Bottom Right
       {
         cmd: CMD_Fetch.imageViewActionToID,
         toID: bottomRightDiv,
         img: arr[1].img,
         group: arr[1].group,
         styleCss: {
-          ...getImgCSS(arr[1].imgStyle),
-          width: '100%',
-          height: '100%',
+          maxWidth: '100%',
+          maxHeight: '100%',
           objectFit: 'contain',
         },
       },

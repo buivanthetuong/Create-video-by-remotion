@@ -1,8 +1,8 @@
 // src/Components/ActionOrchestrator/actions/TypingTextActionToID.jsx
-import React from "react";
-import { createPortal } from "react-dom";
-import { mergeStyles } from "../utils/cssOverrideManager.js";
-import TypingTextNoEffect from "../smallComponents/text/TypingTextNoEffect.jsx";
+import React from 'react';
+import { createPortal } from 'react-dom';
+import { mergeStyles } from '../utils/cssOverrideManager.js';
+import TypingTextNoEffect from '../smallComponents/text/TypingTextNoEffect.jsx';
 
 /**
  * 📝 TYPING TEXT TO ID ACTION
@@ -22,16 +22,16 @@ function TypingTextActionToID({ data }) {
     id,
   } = data;
 
-  const hasText = item?.text && item.text.trim() !== "";
+  const hasText = item?.text && item.text.trim() !== '';
 
   // ✅ Chuẩn bị text format
   const textData = action.text
-    ? [{ text: action.text, type: "normal" }]
+    ? [{ text: action.text, type: 'normal' }]
     : hasText
-      ? [{ text: item.text, type: "normal" }]
-      : [{ text: "", type: "normal" }];
+      ? [{ text: item.text, type: 'normal' }]
+      : [{ text: '', type: 'normal' }];
 
-  console.log("TypingTextActionToID:", {
+  console.log('TypingTextActionToID:', {
     toID: action.toID,
     text: action.text,
   });
@@ -65,7 +65,7 @@ function TypingTextActionToID({ data }) {
         startFrame={actionStartFrame}
         endFrame={actionEndFrame}
         sound={action.sound !== false}
-        noTyping={action.noTyping || false}
+        noTyping={action.noTyping || true}
         dataAction={action}
         data={data}
       />,
