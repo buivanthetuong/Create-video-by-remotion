@@ -87,7 +87,7 @@
       "textEffect": 1,
       "img": null,
       "imgEffect": "none",
-      "soundEffect": "soundEffect_funnyspring",
+      "soundEffect": "soundEffect_pop",
       "backgroundIMG": "BG_5.jpg",
       "backgroundSound": null
     },
@@ -100,7 +100,7 @@
       "textEffect": 1,
       "img": "CSK_alert.png",
       "imgEffect": 1,
-      "soundEffect": "soundEffect_whistleup",
+      "soundEffect": "soundEffect_pop",
       "backgroundIMG": "BG_5.jpg",
       "backgroundSound": null
     },
