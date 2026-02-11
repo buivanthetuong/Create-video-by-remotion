@@ -53,34 +53,6 @@ export default function group1_1(arr) {
         },
       },
       
-      // Div 1 - Header text (25%)
-      {
-        cmd: CMD_Fetch.divAction,
-        id: `${uid}_div1`,
-        toID: mainContainer,
-        group: arr[0].group,
-        styleCss: {
-          flex: '1',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-          width: '100%',
-          zIndex: 2,
-        },
-      },
-      {
-        cmd: CMD_Fetch.typingText,
-        text: 'sắc huyền hỏi ngã nặng',
-        toID: `${uid}_div1`,
-        group: arr[0].group,
-        styleCss: {
-          ...getTextCSS('header'),
-          position: 'absolute',
-          fontSize: '80px',
-        },
-      },
-      
       // Div 2 - Subtitle text (25%)
       {
         cmd: CMD_Fetch.divAction,
@@ -104,44 +76,14 @@ export default function group1_1(arr) {
         group: arr[0].group,
         styleCss: {
           ...getTextCSS('subtitle'),
+          ...getEffect('textJump'),
           fontSize: '80px',
         },
       },
       
-      // Div 3 - Title text (25%)
-      {
-        cmd: CMD_Fetch.divAction,
-        id: `${uid}_div3`,
-        toID: mainContainer,
-        group: arr[0].group,
-        styleCss: {
-          flex: '1',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          textAlign: 'center',
-          width: '100%',
-          zIndex: 2,
-        },
-      },
-      {
-        cmd: CMD_Fetch.typingText,
-        text: 'sắc huyền hỏi ngã nặng',
-        toID: `${uid}_div3`,
-        group: arr[0].group,
-        styleCss: {
-          ...getTextCSS('title'),
-          fontSize: '60px',
-        },
-      },
-      
-      // Sound effect
-      {
-        cmd: CMD_Fetch.soundPlayerAction,
-        soundSource: arr[0].soundEffect,
-      },
     ],
     code: arr[0].code,
+    timeFixed: 4,
   };
 
   return [obj1];

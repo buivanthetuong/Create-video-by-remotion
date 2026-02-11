@@ -1,16 +1,4 @@
-// Animation effects presets (using keyframes from animations.css)
-
 const ObjEffect = {
-  // Xoay và phóng to rồi chậm lại
-  spinSlowDown: {
-    animation: 'spinSlowDown 1.5s ease-out forwards',
-  },
-
-  // Fade in + scale từ nhỏ lên
-  fadeInScale: {
-    animation: 'fadeInScale 1s ease-out forwards',
-  },
-
   // Fade in trượt từ trái sang
   fadeInSlideLeft: {
     animation: 'fadeInSlideLeft 1s ease-out forwards',
@@ -21,34 +9,27 @@ const ObjEffect = {
     animation: 'fadeInSlideRight 1s ease-out forwards',
   },
 
+  // Fade in trượt từ trên xuống
+  fadeInSlideTop: {
+    animation: 'fadeInSlideTop 1s ease-out forwards',
+  },
+
   // Fade in trượt từ dưới lên
   fadeInSlideBottom: {
     animation: 'fadeInSlideBottom 1s ease-out forwards',
   },
 
-  // Hiệu ứng bật nảy vào
-  bounceIn: {
-    animation: 'bounceIn 0.9s ease-out forwards',
-  },
-
-  // Hiệu ứng bật nảy vào lặp lại mãi mãi
-  bounceInInfinity: {
-    animation: 'bounceIn 1.8s ease-in-out infinite alternate',
-  },
   // Phóng to từ tâm
   zoomIn: {
-    animation: 'zoomIn 1s ease-out forwards',
+    animation: 'bounceIn 1s ease-out forwards',
   },
 
-  // Zoom in/out lặp lại (dùng cho icon, button, v.v.)
-  zoomInOutLoop: {
-    animation: 'zoomInOut 1.6s ease-in-out infinite',
-  },
-
-  // Xoay chậm lặp lại (dùng cho background, icon, v.v.)
-  slowRotateLoop: {
-    animation: 'slowRotate 12s linear infinite',
+  // Chữ nhảy - Jumping Text
+  textJump: {
+    textEffect: 'char-jump', // Signal to split text
+    animation: 'jumpChar 0.5s ease-in-out both', // 'both' keeps 0% state during delay
   },
 };
 
 export { ObjEffect };
+ 
