@@ -47,62 +47,94 @@ export default function group1_1(arr) {
           inset: 0,
           display: 'flex',
           flexDirection: 'column',
-          padding: '100px 40px 40px 40px',
+          alignItems: 'center',
+          justifyContent: 'space-around',
+          padding: '60px 40px',
         },
       },
-      // Top Div – 40% – chứa chữ
+      
+      // Div 1 - Header text (25%)
       {
         cmd: CMD_Fetch.divAction,
-        id: topDiv,
+        id: `${uid}_div1`,
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '30%',
+          flex: '1',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
+          width: '100%',
           zIndex: 2,
         },
       },
       {
         cmd: CMD_Fetch.typingText,
-        text: arr[0].text,
-        toID: topDiv,
+        text: 'sắc huyền hỏi ngã nặng',
+        toID: `${uid}_div1`,
         group: arr[0].group,
         styleCss: {
-          ...getTextCSS('subtitle'),
-          ...getEffect('fadeInScale'),
+          ...getTextCSS('header'),
+          position: 'absolute',
           fontSize: '80px',
         },
       },
-      // Bottom Div – 50% – chứa ảnh
+      
+      // Div 2 - Subtitle text (25%)
       {
         cmd: CMD_Fetch.divAction,
-        id: bottomDiv,
+        id: `${uid}_div2`,
         toID: mainContainer,
         group: arr[0].group,
         styleCss: {
-          height: '50%',
+          flex: '1',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
+          textAlign: 'center',
+          width: '100%',
           zIndex: 2,
         },
       },
       {
-        cmd: CMD_Fetch.imageViewActionToID,
-        toID: bottomDiv,
-        img: arr[0].img,
+        cmd: CMD_Fetch.typingText,
+        text: 'sắc huyền hỏi ngã nặng',
+        toID: `${uid}_div2`,
         group: arr[0].group,
         styleCss: {
-          ...getImgCSS('1'),
-          ...getEffect('fadeInScale'),
-          width: '500px',
-          height: '500px',
-          objectFit: 'contain',
+          ...getTextCSS('subtitle'),
+          fontSize: '80px',
         },
       },
+      
+      // Div 3 - Title text (25%)
+      {
+        cmd: CMD_Fetch.divAction,
+        id: `${uid}_div3`,
+        toID: mainContainer,
+        group: arr[0].group,
+        styleCss: {
+          flex: '1',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          textAlign: 'center',
+          width: '100%',
+          zIndex: 2,
+        },
+      },
+      {
+        cmd: CMD_Fetch.typingText,
+        text: 'sắc huyền hỏi ngã nặng',
+        toID: `${uid}_div3`,
+        group: arr[0].group,
+        styleCss: {
+          ...getTextCSS('title'),
+          fontSize: '60px',
+        },
+      },
+      
       // Sound effect
       {
         cmd: CMD_Fetch.soundPlayerAction,
