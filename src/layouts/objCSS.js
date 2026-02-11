@@ -2,27 +2,44 @@
 
 const ObjCSS = {
   textCSS: {
-    //chu do vien vang
-    textCss_1: {
-      fontWeight: 700,
-      lineHeight: 1.1,
-      letterSpacing: '0.5px',
-      color: 'red',
-      WebkitTextStroke: '10px yellow', // 👈 viền chữ
-      paintOrder: 'stroke fill', // viền nằm dưới chữ
+    textCss_header: {
+      fontFamily: 'Nunito',
+      fontWeight: 900,
+      textTransform: 'uppercase',
+      color: 'white',
+      WebkitTextStroke: '10px black',
+      paintOrder: 'stroke fill',
       padding: '80px 40px 80px 40px',
-      backgroundColor: 'transparent',
     },
-    //chu vang vien xanh
-    textCss_2: {
-      fontWeight: 600,
-      lineHeight: 1.1,
-      letterSpacing: '0.5px',
-      color: 'yellow',
-      WebkitTextStroke: '4px green', // 👈 viền chữ vàng như css1
-      paintOrder: 'stroke fill', // viền nằm dưới chữ
+    textCss_subtitle: {
+      fontFamily: 'Montserrat',
+      textTransform: 'uppercase',
+      letterSpacing: '10px',
+      fontWeight: 800,
+      color: 'white',
+      WebkitTextStroke: '8px black',
+      paintOrder: 'stroke fill',
       padding: '80px 40px 80px 40px',
-      backgroundColor: 'transparent',
+    }, 
+    textCss_title: {
+      fontFamily: 'Montserrat',
+      textTransform: 'uppercase',
+      letterSpacing: '10px',
+      fontWeight: 800,
+      color: 'white',
+      WebkitTextStroke: '8px black',
+      paintOrder: 'stroke fill',
+      padding: '80px 40px 80px 40px',
+    },
+    textCss_caption: {
+      fontFamily: 'Montserrat',
+      textTransform: 'uppercase',
+      letterSpacing: '10px',
+      fontWeight: 800,
+      color: 'white',
+      WebkitTextStroke: '8px black',
+      paintOrder: 'stroke fill',
+      padding: '80px 40px 80px 40px',
     },
     textCss_none: {
       display: 'none',

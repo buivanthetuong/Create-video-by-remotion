@@ -101,8 +101,8 @@ export default function group2_1(arr) {
         toID: topLeftDiv,
         group: arr[0].group,
         styleCss: {
-          ...getTextCSS('2'),
-          fontSize: '60px',
+          ...getTextCSS('header'),
+          fontSize: arr[0].fontSize || '70px',
         },
       },
       {
@@ -173,8 +173,8 @@ export default function group2_1(arr) {
         toID: bottomRightDiv,
         group: arr[1].group,
         styleCss: {
-          ...getTextCSS('2'),
-          fontSize: '60px',
+          ...getTextCSS('subtitle'),
+          fontSize: arr[1].fontSize || '100px',
         },
       },
       {

@@ -71,7 +71,7 @@ export default function group1_1(arr) {
         toID: topDiv,
         group: arr[0].group,
         styleCss: {
-          ...getTextCSS('1'),
+          ...getTextCSS('subtitle'),
           ...getEffect('fadeInScale'),
           fontSize: '80px',
         },
