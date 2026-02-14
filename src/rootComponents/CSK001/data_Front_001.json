@@ -1,17 +1,48 @@
 [
   [
     {
-      "code": "CSK002_014",
-      "script": "Khớp nào giúp bạn xoay chuyển cả thế giới?",
-      "group": "a",
-      "mode": 1,
-      "text": "Mưa = vũ",
-      "textEffect": 1,
-      "img": "CSK_ngoi.png",
-      "imgEffect": 1,
+      "code": "SOUNDCHUNG_SpaceSound",
+      "group": 1,
+      "mode": "text1",
+      "script": "Chỉ hơn 4 triệu đồng tiền nợ, một mối quan hệ đồng nghiệp thân thiết đã trượt dài thành bi kịch không ai kịp dừng lại.",
+      "text": "Tình bạn trong công ty trở thành mối bi kịch chỉ vì 4 triệu đồng?",
       "soundEffect": "soundEffect_suprise2",
+      "img": null,
       "backgroundIMG": "BG_white.png",
-      "backgroundSound": "BG_cafesound"
+      "backgroundSound": "SOUNDCHUNG_1"
+    },
+    {
+      "code": "SOUNDCHUNG_SpaceSound",
+      "group": 2,
+      "mode": "3text1",
+      "script": "Hai người quen biết ngoài xã hội, không hề có bất kỳ thù oán nào, chỉ vì khoản vay 4,5 triệu đồng kéo dài không được giải quyết",
+      "text": "Từ những khoảng nợ nhỏ",
+      "soundEffect": "soundEffect_swoosh",
+      "img": null,
+      "backgroundIMG": null,
+      "backgroundSound": null
+    },
+    {
+      "code": "SOUNDCHUNG_SpaceSound",
+      "group": 2,
+      "mode": "3text1",
+      "script": "Rồi từ một xung đột cá nhân dẫn đến hành vi phạm tội nghiêm trọng, gây thiệt hại không thể khắc phục cho cả hai gia đình",
+      "text": "Hậu quả vượt ngoài tầm kiểm soát!!",
+      "soundEffect": "soundEffect_swoosh",
+      "img": null,
+      "backgroundIMG": null,
+      "backgroundSound": null
+    },
+    {
+      "code": "SOUNDCHUNG_SpaceSound",
+      "group": 2,
+      "mode": "3text1",
+      "script": "Bản án nghiêm khắc khép lại vụ việc, để lại bài học đau xót về sự nóng nảy và thiếu kiềm chế",
+      "text": "Cái giá phải trả là gì?",
+      "soundEffect": "soundEffect_swoosh",
+      "img": null,
+      "backgroundIMG": null,
+      "backgroundSound": null
     }
   ]
 ]

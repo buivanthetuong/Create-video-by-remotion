@@ -27,9 +27,9 @@ const ObjEffect = {
   // Chữ nhảy - Jumping Text
   textJump: {
     textEffect: 'char-jump', // Signal to split text
-    animation: 'jumpChar 0.5s ease-in-out both', // 'both' keeps 0% state during delay
+    animation: 'jumpChar 1s ease-in-out both', // 'both' keeps 0% state during delay
   },
 };
 
 export { ObjEffect };
- 
+
