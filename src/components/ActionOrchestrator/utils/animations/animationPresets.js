@@ -127,67 +127,6 @@ export const AnimationPresets = {
       return { transform: makeTransform([translateY(-offset)]) };
     }
   },
-
-  // ⭐ FADE IN + SLIDE (kết hợp opacity + translate)
-  fadeInSlide: (currentFrame, duration, options = {}) => {
-    const { direction = "left", distance = 200 } = options;
-    const isHorizontal = direction === "left" || direction === "right";
-    const translateFn = isHorizontal ? translateX : translateY;
-    const sign = direction === "left" || direction === "top" ? -1 : 1;
-
-    return interpolateStyles(
-      currentFrame,
-      [0, duration],
-      [
-        { opacity: 0, transform: makeTransform([translateFn(sign * distance)]) },
-        { opacity: 1, transform: makeTransform([translateFn(0)]) },
-      ],
-    );
-  },
-
-  // ⭐ MOVE UP (đẩy lên trên)
-  moveUp: (currentFrame, duration, options = {}) => {
-    const { distance = 350 } = options;
-
-    return interpolateStyles(
-      currentFrame,
-      [0, duration],
-      [
-        { transform: makeTransform([translateY(0)]) },
-        { transform: makeTransform([translateY(-distance)]) },
-      ],
-    );
-  },
-
-  // ⭐ GROW DOWN (mọc chiều cao + opacity)
-  growDown: (currentFrame, duration, options = {}) => {
-    const { maxHeight = 120 } = options;
-    const fadeInEnd = Math.max(1, Math.round(duration * 0.1));
-
-    return interpolateStyles(
-      currentFrame,
-      [0, fadeInEnd, duration],
-      [
-        { height: 0, opacity: 0 },
-        { height: 0, opacity: 1 },
-        { height: maxHeight, opacity: 1 },
-      ],
-    );
-  },
-
-  // ⭐ REVEAL (hiện item: fade + slide lên nhẹ)
-  reveal: (currentFrame, duration, options = {}) => {
-    const { distance = 20 } = options;
-
-    return interpolateStyles(
-      currentFrame,
-      [0, duration],
-      [
-        { opacity: 0, transform: makeTransform([translateY(distance)]) },
-        { opacity: 1, transform: makeTransform([translateY(0)]) },
-      ],
-    );
-  },
 };
 
 /**

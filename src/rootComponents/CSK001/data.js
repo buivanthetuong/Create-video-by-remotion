@@ -6,7 +6,6 @@ import { Logger } from '../../utils/logger.js';
 
 import group1_1 from '../../layouts/group1/group1_1.js';
 import group1_2 from '../../layouts/group1/group1_2.js';
-import group1_3 from '../../layouts/group1/group1_3.js';
 
 import group2_1 from '../../layouts/group2/group2_1.js';
 import group2_2 from '../../layouts/group2/group2_2.js';
@@ -24,7 +23,6 @@ import group5_3 from '../../layouts/group5/group5_3.js';
 const handlerMap = {
   group1_1: group1_1,
   group1_2: group1_2,
-  group1_3: group1_3,
 
   group2_1: group2_1,
   group2_2: group2_2,

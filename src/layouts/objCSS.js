@@ -8,6 +8,7 @@ const ObjCSS = {
       letterSpacing: '10px',
       fontWeight: 800,
       color: 'black',
+      WebkitTextStroke: '4px black',
     },
     textCss_subtitle: {
       fontFamily: 'Fuzzy Bubbles',

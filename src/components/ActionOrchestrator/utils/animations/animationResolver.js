@@ -27,13 +27,17 @@ export function useAnimations(animationsConfig = []) {
       duration = 300,
       startFrame = 0,
       endFrame = Infinity,
-      fillMode = 'none', // ⭐ NEW: 'none' | 'both' | 'forwards' | 'backwards'
       ...options
     } = animConfig;
 
     // ⚠️ Bắt buộc phải có target
     if (!target) {
       console.warn("⚠️ Animation missing 'target' property:", animConfig);
+      return;
+    }
+
+    // Kiểm tra frame range
+    if (currentFrame < startFrame || currentFrame > endFrame) {
       return;
     }
 
@@ -44,25 +48,8 @@ export function useAnimations(animationsConfig = []) {
       return;
     }
 
-    // ⭐ Xử lý fillMode
-    let relativeFrame;
-
-    if (fillMode === 'both') {
-      // fill: both — luôn áp dụng, clamp ở đầu và cuối
-      relativeFrame = Math.max(0, Math.min(currentFrame - startFrame, duration));
-    } else if (fillMode === 'forwards') {
-      // fill: forwards — bỏ qua trước startFrame, giữ trạng thái cuối
-      if (currentFrame < startFrame) return;
-      relativeFrame = Math.min(currentFrame - startFrame, duration);
-    } else if (fillMode === 'backwards') {
-      // fill: backwards — áp dụng trạng thái đầu trước startFrame, bỏ qua sau endFrame
-      if (currentFrame > endFrame) return;
-      relativeFrame = Math.max(0, currentFrame - startFrame);
-    } else {
-      // fill: none (mặc định) — chỉ active trong [startFrame, endFrame]
-      if (currentFrame < startFrame || currentFrame > endFrame) return;
-      relativeFrame = currentFrame - startFrame;
-    }
+    // Tính frame tương đối
+    const relativeFrame = currentFrame - startFrame;
 
     // Apply animation
     const animStyle = animationFn(relativeFrame, duration, options);

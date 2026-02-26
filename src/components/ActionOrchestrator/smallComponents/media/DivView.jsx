@@ -21,20 +21,8 @@ const DivView = ({
   const elementClass = dataAction.className || data.className;
 
   // ⭐ Lấy animations từ data
-  const rawAnimations = dataAction.animations || data.animations || [];
-
-  // ⭐ Chuyển đổi frame tương đối → tuyệt đối (nếu relativeToAction)
-  const adjustedAnimations = rawAnimations.map(anim => {
-    if (anim.relativeToAction) {
-      return {
-        ...anim,
-        startFrame: (anim.startFrame || 0) + startFrame,
-      };
-    }
-    return anim;
-  });
-
-  const animationStyles = useAnimations(adjustedAnimations);
+  const animations = dataAction.animations || data.animations || [];
+  const animationStyles = useAnimations(animations);
 
   // Visibility check
   if (frame < startFrame || frame > endFrame) return null;
