@@ -36,7 +36,7 @@ const TypingText = ({
   const animations = dataAction.animations || data.animations || [];
   const animationStyles = useAnimations(animations);
 
-  const typingDuration = 2; // 3 giây
+  const typingDuration = 0.5; // 3 giây
   const typingFrames = typingDuration * fps;
 
   if (frame < startFrame || frame > endFrame) return null;
@@ -75,14 +75,6 @@ const TypingText = ({
   // ⭐ Check for special text effects (like jump)
   const textEffectContent = processTextEffect(displayText, containerStyle);
 
-<<<<<<< HEAD
-=======
-  // If text effect is active, remove animation from parent container to avoid double animation
-  const finalContainerStyle = textEffectContent
-    ? { ...containerStyle, animation: 'none', textEffect: undefined }
-    : containerStyle;
-
->>>>>>> ee6b266668661392d49d7e1777b905fe790478bd
   return (
     <div id={elementId} className={elementClass} style={containerStyle}>
       {textEffectContent || displayText}

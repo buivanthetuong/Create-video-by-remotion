@@ -2,29 +2,20 @@
 
 const ObjCSS = {
   textCSS: {
-    textCss_1: {
-      fontFamily: 'Fuzzy Bubbles',
-      fontWeight: 700,
+    textCss_header: {
+      fontFamily: 'Nunito',
       textTransform: 'uppercase',
-<<<<<<< HEAD
       letterSpacing: '10px',
       fontWeight: 800,
       color: 'black',
-=======
-      letterSpacing: '12px',
-      color: '#ff8800ff',
-      WebkitTextStroke: '15px #500202ff',
-      textShadow: '10px 10px 10px #000000ff',
-      paintOrder: 'stroke fill',
->>>>>>> ee6b266668661392d49d7e1777b905fe790478bd
     },
-    textCss_2: {
+    textCss_subtitle: {
       fontFamily: 'Fuzzy Bubbles',
       letterSpacing: '10px',
       fontWeight: 800,
       color: 'black',
       WebkitTextStroke: '3px #000000ff',
-    },
+    }, 
     textCss_title: {
       fontFamily: 'Fuzzy Bubbles',
       letterSpacing: '7px',
