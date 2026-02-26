@@ -52,7 +52,7 @@ export default function group1_1(arr) {
           padding: '60px 40px',
         },
       },
-      
+
       // Div 2 - Subtitle text (25%)
       {
         cmd: CMD_Fetch.divAction,
@@ -75,12 +75,12 @@ export default function group1_1(arr) {
         toID: `${uid}_div2`,
         group: arr[0].group,
         styleCss: {
-          ...getTextCSS('subtitle'),
+          ...getTextCSS('2'),
           ...getEffect('textJump'),
           fontSize: '80px',
         },
       },
-      
+
     ],
     code: arr[0].code,
     timeFixed: 4,
