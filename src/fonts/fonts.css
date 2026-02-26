@@ -1,0 +1,236 @@
+/* ====================================
+   MONTSERRAT FONT FAMILY - ALL WEIGHTS
+   (Excluding Italic variants)
+   ==================================== */
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat/static/Montserrat-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat/static/Montserrat-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat/static/Montserrat-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat/static/Montserrat-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat/static/Montserrat-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat/static/Montserrat-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat/static/Montserrat-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat/static/Montserrat-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Montserrat';
+  src: url('./Montserrat/static/Montserrat-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* ====================================
+   NUNITO FONT FAMILY - ALL WEIGHTS
+   (Excluding Italic variants)
+   ==================================== */
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('./Nunito/static/Nunito-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('./Nunito/static/Nunito-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('./Nunito/static/Nunito-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('./Nunito/static/Nunito-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('./Nunito/static/Nunito-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('./Nunito/static/Nunito-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('./Nunito/static/Nunito-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('./Nunito/static/Nunito-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* ====================================
+   BE VIETNAM PRO FONT FAMILY - ALL WEIGHTS
+   (Excluding Italic variants)
+   ==================================== */
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('./Be_Vietnam_Pro/BeVietnamPro-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('./Be_Vietnam_Pro/BeVietnamPro-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('./Be_Vietnam_Pro/BeVietnamPro-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('./Be_Vietnam_Pro/BeVietnamPro-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('./Be_Vietnam_Pro/BeVietnamPro-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('./Be_Vietnam_Pro/BeVietnamPro-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('./Be_Vietnam_Pro/BeVietnamPro-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('./Be_Vietnam_Pro/BeVietnamPro-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Be Vietnam Pro';
+  src: url('./Be_Vietnam_Pro/BeVietnamPro-Black.ttf') format('truetype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* ====================================
+   DANCING SCRIPT FONT FAMILY
+   ==================================== */
+
+@font-face {
+  font-family: 'Dancing Script';
+  src: url('./Dancing_Script/static/DancingScript-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ====================================
+   FUZZY BUBBLES FONT FAMILY
+   ==================================== */
+
+@font-face {
+  font-family: 'Fuzzy Bubbles';
+  src: url('./Fuzzy_Bubbles/FuzzyBubbles-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fuzzy Bubbles';
+  src: url('./Fuzzy_Bubbles/FuzzyBubbles-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* ====================================
+   BANGERS FONT FAMILY
+   ==================================== */
+
+@font-face {
+  font-family: 'Bangers';
+  src: url('./Bangers/Bangers-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}

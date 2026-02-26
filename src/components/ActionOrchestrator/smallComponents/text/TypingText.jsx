@@ -75,13 +75,8 @@ const TypingText = ({
   // ⭐ Check for special text effects (like jump)
   const textEffectContent = processTextEffect(displayText, containerStyle);
 
-  // If text effect is active, remove animation from parent container to avoid double animation
-  const finalContainerStyle = textEffectContent 
-    ? { ...containerStyle, animation: 'none', textEffect: undefined }
-    : containerStyle;
-
   return (
-    <div id={elementId} className={elementClass} style={finalContainerStyle}>
+    <div id={elementId} className={elementClass} style={containerStyle}>
       {textEffectContent || displayText}
       {/* ✅ Typing sound with all options */}
       {/* {sound && !noTyping && (

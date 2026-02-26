@@ -4,13 +4,12 @@
       "code": "CSK002_014",
       "script": "Khớp nào giúp bạn xoay chuyển cả thế giới?",
       "group": "a",
-      "mode": 1,
-      "text": "Mưa = vũ",
+      "mode": 3,
+      "text": "Khớp nào giúp bạn xoay chuyển cả thế giới?",
       "textEffect": 1,
-      "img": "CSK_ngoi.png",
-      "imgEffect": 1,
+      "img": "BG_1.jpg",
       "soundEffect": "soundEffect_suprise2",
-      "backgroundIMG": "BG_white.png",
+      "backgroundIMG": "BG_5.jpg",
       "backgroundSound": "BG_cafesound"
     }
   ]
